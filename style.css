@@ -1,0 +1,159 @@
+
+body {
+	margin: 0;
+	font-family: "Protest Riot", sans-serif;
+}
+h1{
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+h4{
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+
+}
+
+a:hover{
+	color: rgb(204, 166, 116);
+}
+
+
+#colmn_left {
+	width: 66%;
+	float:left;
+	background-color: rgb(255, 255, 255);
+	height: 500px;
+	color: #000000;
+}
+
+#description{
+	text-align: center;
+			}
+#colmn_right {
+	width: 34%;
+	float:right;
+	background-color: rgb(255, 255, 255);
+	height: 500px;
+}
+
+#colmn_right3 {
+	width: 31%;
+	margin: 1%;
+	float:left;
+	background-color: rgb(255, 255, 255);
+	height: 500px;
+}
+
+#colmn_middle2 {
+	width: 31%;
+	margin: 1%;
+	float: left;
+	background-color: rgb(255, 255, 255);
+	height: 500px;
+}
+
+#colmn_left1 {
+	width: 31%;
+	margin: 1%;
+	float:left;
+	background-color: rgb(255, 255, 255);
+	height: 500px;
+}
+
+
+#rouge{
+	color: blue;
+}
+
+/* Ajoutez du style au conteneur du bouton */
+.back-button-container {
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    clear: both;
+}
+
+/* Ajoutez l'animation au bouton */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-size: 1.2em;
+}
+
+
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.info-item {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+.info-item:last-child {
+    margin-right: 0;
+}
+
+.info-item h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+.info-item a {
+    color: #333;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    color: #555;
+}
+
+/*JS*/
