@@ -1,0 +1,522 @@
+/* Réinitialisation des boîtes de modèle */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Variables CSS personnalisées */
+:root {
+    font-size: 16px; /* Taille de police */
+    --page-padding: 1.5rem; /* Marge intérieure de la page */
+    --color-text: #fff; /* Couleur du texte */
+    --color-bg: #12100e; /* Couleur de fond */
+    --color-link: rgba(255,255,255,0.6); /* Couleur du lien */
+    --color-link-hover: #fff; /* Couleur du lien au survol */
+    --color-bg-1: #2f251e; /* Couleur de fond 1 */
+    --color-bg-2: #43392f; /* Couleur de fond 2 */
+    --color-bg-3: var(--color-bg-1); /* Couleur de fond 3 */
+    --color-bg-4: var(--color-bg-2); /* Couleur de fond 4 */
+    --color-bg-5: var(--color-bg-1); /* Couleur de fond 5 */
+}
+
+/* Styles de base pour le corps de la page */
+body {
+    margin: 0; /* Marge externe */
+    color: var(--color-text); /* Couleur du texte */
+    background-color: var(--color-bg); /* Couleur de fond */
+    font-family: "area-variable", sans-serif; /* Police de caractères */
+    font-variation-settings: "slnt" 0, "wdth" 150, "wght" 500, "INKT" 0; /* Paramètres de variation de la police */
+    -webkit-font-smoothing: antialiased; /* Lissage de police pour WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Lissage de police pour macOS */
+    width: 100%; /* Largeur de 100% */
+    overflow-x: hidden; /* Masquer le débordement horizontal */
+}
+
+/* Loader de page */
+.js .loading::before,
+.js .loading::after {
+    content: '';
+    position: fixed;
+    z-index: 5000;
+}
+
+.js .loading::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+}
+
+.js .loading::after {
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: var(--color-link);
+    animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+    to {
+        opacity: 1;
+        transform: scale3d(0.5,0.5,1);
+    }
+}
+
+/* Styles pour les liens */
+a {
+    text-decoration: none; /* Pas de décoration de texte */
+    color: var(--color-link); /* Couleur du lien */
+    outline: none; /* Pas de contour */
+    cursor: pointer; /* Curseur de souris */
+}
+
+a:hover {
+    color: var(--color-link-hover); /* Couleur du lien au survol */
+    outline: none; /* Pas de contour */
+}
+
+/* Styles pour les meilleurs styles de focus */
+a:focus {
+    /* Fournir un style de secours pour les navigateurs
+       qui ne supportent pas :focus-visible */
+    outline: none;
+    background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+    /* Supprimer l'indicateur de focus lors du focus de la souris pour les navigateurs
+       qui supportent :focus-visible */
+    background: transparent;
+}
+
+a:focus-visible {
+    /* Dessiner un style de focus très visible pour
+       focus au clavier sur les navigateurs qui supportent
+       :focus-visible */
+    outline: 2px solid red;
+    background: transparent;
+}
+
+/* Styles pour les boutons non-stylisés */
+.unbutton {
+    background: none; /* Arrière-plan transparent */
+    border: 0; /* Pas de bordure */
+    padding: 0; /* Pas de remplissage */
+    margin: 0; /* Pas de marge */
+    font: inherit; /* Police héritée */
+    cursor: pointer; /* Curseur de souris */
+}
+
+.unbutton:focus {
+    outline: none; /* Pas de contour */
+}
+
+/* Styles du cadre */
+.frame {
+    padding: var(--page-padding); /* Rembourrage */
+    position: relative; /* Position relative */
+    display: grid; /* Affichage en grille */
+    z-index: 1000; /* Ordre de superposition */
+    width: 100%; /* Largeur à 100% */
+    grid-row-gap: 1rem; /* Espacement entre les lignes de la grille */
+    grid-column-gap: 2rem; /* Espacement entre les colonnes de la grille */
+    justify-items: start; /* Alignement des éléments de la grille au début */
+    text-transform: uppercase; /* Transformation du texte en majuscules */
+    font-size: 12px; /* Taille de police */
+}
+
+/* Styles de l'en-tête du cadre */
+.frame--header {
+    height: 100%; /* Hauteur à 100% */
+    z-index: 3000; /* Ordre de superposition */
+    background-size: auto 80%; /* Taille de fond automatique à 80% */
+    background-position: 120% 50%; /* Position de fond */
+    background-repeat: no-repeat; /* Répétition de fond */
+    grid-template-areas: 'title' 'prev' 'back' 'sub' 'sponsor' 'demos' 'heading'; /* Zones de la grille */
+}
+
+/* Styles du pied de cadre */
+.frame--footer {
+    grid-template-areas: 'credits' 'author'; /* Zones de la grille */
+    align-content: end; /* Alignement du contenu à la fin */
+}
+
+/* Styles de l'élément #cdawrap dans le cadre */
+.frame #cdawrap {
+    justify-self: start; /* Alignement de l'auto-justification au début */
+}
+
+/* Styles des liens dans le cadre */
+.frame a {
+    pointer-events: auto; /* Événements de pointeur activés */
+}
+
+/* Styles du titre du cadre */
+.frame__title {
+    grid-area: title; /* Zone de la grille */
+    font-size: inherit; /* Taille de police héritée */
+    margin: 0; /* Marge nulle */
+}
+
+/* Styles du bouton de retour du cadre */
+.frame__back {
+    grid-area: back; /* Zone de la grille */
+    justify-self: start; /* Alignement de l'auto-justification au début */
+}
+
+/* Styles du bouton précédent du cadre */
+.frame__prev {
+    grid-area: prev; /* Zone de la grille */
+    justify-self: start; /* Alignement de l'auto-justification au début */
+}
+
+/* Styles du sous-titre du cadre */
+.frame__sub {
+    grid-area: sub; /* Zone de la grille */
+}
+
+/* Styles des démos du cadre */
+.frame__demos {
+    grid-area: demos; /* Zone de la grille */
+    display: flex; /* Affichage en ligne */
+    align-items: center; /* Alignement des éléments au centre */
+    gap: 0.5rem; /* Espacement entre les éléments */
+    align-self: start; /* Alignement de l'auto-alignement au début */
+    flex-wrap: wrap; /* Enveloppement des éléments sur plusieurs lignes */
+    background: var(--color-bg); /* Couleur de fond */
+    border: 1px solid; /* Bordure de 1px solide */
+    padding: 1rem; /* Rembourrage */
+    border-radius: 10px; /* Bordure arrondie */
+}
+
+/* Styles des éléments enfants de .frame__demos */
+.frame__demos > * {
+    width: 2rem; /* Largeur de 2rem */
+    display: block; /* Affichage en bloc */
+    flex: none; /* Flex non */
+    text-decoration: none; /* Pas de décoration de texte */
+    border-radius: 50%; /* Bordure arrondie à 50% */
+    aspect-ratio: 1; /* Ratio d'aspect de 1 */
+    border: 1px solid var(--color-link-hover); /* Bordure de 1px solide avec la couleur var(--color-link-hover) */
+    display: grid; /* Affichage en grille */
+    place-items: center; /* Position des éléments au centre */
+    padding-top: 0.2em; /* Rembourrage supérieur de 0.2em */
+    background: var(--color-bg); /* Couleur de fond */
+}
+
+/* Styles du span enfant de .frame__demos */
+.frame__demos > span {
+    filter: invert(100%); /* Inversion des couleurs */
+}
+
+/* Styles du contenu avant .frame__demos */
+.frame__demos::before {
+    content: "Variations:"; /* Contenu de l'élément ::before */
+}
+
+/* Styles de l'en-tête du cadre */
+.frame__heading {
+    grid-area: heading; /* Zone de la grille */
+    align-self: center; /* Alignement de l'auto-alignement au centre */
+    justify-self: start; /* Alignement de l'auto-justification au début */
+    width: min-content; /* Largeur au contenu minimal */
+    display: flex; /* Affichage en ligne */
+    flex-direction: column; /* Direction de la colonne */
+    margin-top: 10vh; /* Marge supérieure à 10% de la vue */
+}
+
+/* Styles du titre h2 de l'en-tête du cadre */
+.frame__heading h2 {
+    margin: 0; /* Marge nulle */
+    line-height: 0.9; /* Hauteur de ligne de 0.9 */
+    text-transform: uppercase; /* Transformation du texte en majuscules */
+    margin-left: -0.065em; /* Marge à gauche de -0.065em */
+    font-size: clamp(2.5rem,12vw,7rem); /* Taille de police variable */
+    letter-spacing: -0.105em; /* Espacement des lettres de -0.105em */
+    font-variation-settings: "slnt" 0, "wdth" 400, "wght" 900, "INKT" 400; /* Réglages de variation de police */
+}
+
+/* Styles de l'élément i */
+i {
+    font-style: normal; /* Style de police normal */
+    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 400, "INKT" 400; /* Réglages de variation de police */
+}
+
+/* Styles des paragraphes dans l'en-tête de cadre */
+.frame__heading p {
+    margin: 0; /* Marge nulle */
+}
+
+/* Styles des crédits du pied de cadre */
+.frame__credits {
+    grid-area: credits; /* Zone de la grille */
+}
+
+/* Styles de l'auteur du pied de cadre */
+.frame__author {
+    display: flex; /* Affichage en ligne */
+    gap: 1.5rem; /* Espacement entre les éléments */
+    grid-area: author; /* Zone de la grille */
+}
+
+/* Styles du contenu */
+.content {
+    padding: var(--page-padding); /* Rembourrage */
+    display: flex; /* Affichage en ligne */
+    flex-direction: column; /* Direction de la colonne */
+    justify-content: center; /* Justification du contenu au centre */
+    align-items: center; /* Alignement des éléments au centre */
+}
+
+/* Styles du contenu en perspective */
+.content--perspective {
+    perspective-origin: 50% 0%; /* Origine de la perspective */
+    perspective: 1000px; /* Perspective */
+}
+
+/* Styles du texte large */
+.text-large {
+    font-size: clamp(1.5rem,5vw,3rem); /* Taille de police variable */
+    max-width: 900px; /* Largeur maximale */
+    margin: 0 0 0.85em 0; /* Marge */
+    line-height: 1.2; /* Hauteur de ligne */
+    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 500, "INKT" 100; /* Réglages de variation de police */
+}
+
+/* Styles du contenu collant */
+.content--sticky {
+    width: 100vw; /* Largeur de la vue */
+    position: sticky; /* Position collante */
+    top: 0; /* Haut à 0 */
+    --offset: 0px; /* Décalage */
+    top: var(--offset); /* Haut avec décalage */
+    height: calc(100vh - var(--offset)); /* Calcul de la hauteur */
+}
+
+/* Styles du contenu en grille */
+.content--grid,
+.content--grid .content__inner {
+    display: grid; /* Affichage en grille */
+    overflow: hidden; /* Débordement masqué */
+    grid-column-gap: 5vw; /* Espacement entre les colonnes */
+    grid-row-gap: 2vh; /* Espacement entre les lignes */
+    align-content: center; /* Alignement du contenu au centre */
+    grid-template-areas: 'content-img' 'content-title' 'content-text'; /* Zones de la grille */
+    justify-items: center; /* Alignement des éléments au centre */
+}
+
+/* Styles du contenu en grille avec un enfant de classe .content__inner */
+.content--grid:has(.content__inner) {
+    display: block; /* Affichage en bloc */
+    padding: 0; /* Pas de rembourrage */
+}
+
+/* Styles de l'intérieur du contenu */
+.content__inner {
+    width: 100%; /* Largeur à 100% */
+    height: 100%; /* Hauteur à 100% */
+    border-radius: 0 0 2rem 2rem; /* Bordure arrondie */
+}
+
+/* Styles du contenu en carte */
+.content--card {
+    display: flex; /* Affichage en ligne */
+    flex-direction: column; /* Direction de la colonne */
+    height: 80vh; /* Hauteur à 80% de la vue */
+    width: 95vw; /* Largeur à 95% de la vue */
+    max-width: 500px; /* Largeur maximale */
+    aspect-ratio: 0.8; /* Ratio d'aspect */
+    top: 10vh; /* Haut à 10% de la vue */
+    margin: auto; /* Marge automatique */
+    border-radius: 14px; /* Bordure arrondie */
+    gap: 3vh; /* Espacement entre les éléments */
+    text-align: center; /* Alignement du texte au centre */
+    margin-bottom: 5vh; /* Marge inférieure */
+}
+
+/* Styles du titre du contenu en carte */
+.content--card .content__title {
+    font-size: clamp(1.5rem,4vw,3.5rem); /* Taille de police variable */
+}
+
+/* Styles de l'élément i dans le titre du contenu en carte */
+.content--card .content__title i {
+    display: block; /* Affichage en bloc */
+}
+
+/* Styles du contenu en demi */
+.content--half {
+    display: flex; /* Affichage en ligne */
+    flex-direction: column; /* Direction de la colonne */
+    gap: 3vh; /* Espacement entre les éléments */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+/* Styles des contenus en demi de rang impair */
+.content--half:nth-child(odd) {
+    margin-left: auto; /* Marge à gauche automatique */
+}
+
+/* Styles de l'image du contenu */
+.content__img {
+    grid-area: content-img; /* Zone de la grille */
+    width: 50%; /* Largeur à 50% */
+    max-width: 300px; /* Largeur maximale */
+    height: auto; /* Hauteur automatique */
+}
+
+/* Styles de l'image large du contenu */
+.content__img--large {
+    width: 60%; /* Largeur à 60% */
+    height: auto; /* Hauteur automatique */
+}
+
+/* Styles de l'image petite du contenu */
+.content__img--small {
+    height: 35%; /* Hauteur à 35% */
+    width: auto; /* Largeur automatique */
+}
+
+/* Styles de l'espaceur */
+.spacer {
+    margin-top: 20vh; /* Marge supérieure à 20% de la vue */
+}
+
+/* Styles du titre du contenu */
+.content__title {
+    grid-area: content-title; /* Zone de la grille */
+    letter-spacing: -0.095em; /* Espacement des lettres */
+    text-transform: uppercase; /* Transformation du texte en majuscules */
+    line-height: 1; /* Hauteur de ligne */
+    font-weight: normal; /* Poids de la police normal */
+    font-size: clamp(2rem,6vw,5rem); /* Taille de police variable */
+    margin: 0; /* Marge nulle */
+    font-variation-settings: "slnt" 0, "wdth" 400, "wght" 900, "INKT" 400; /* Réglages de variation de police */
+}
+
+/* Styles du texte étroit du contenu */
+.content__text--narrow {
+    max-width: 300px; /* Largeur maximale */
+}
+
+/* Styles de l'introduction du contenu */
+.content--intro {
+    padding-top: 25vh; /* Rembourrage supérieur à 25% de la vue */
+    padding-bottom: 25vh; /* Rembourrage inférieur à 25% de la vue */
+    z-index: 2; /* Ordre de superposition */
+} 
+
+
+/* Contenu de fin */
+.content--outro {
+	padding-top: 50vh; /* Rembourrage en haut de 50% de la hauteur de la vue */
+	padding-bottom: 30vh; /* Rembourrage en bas de 30% de la hauteur de la vue */
+}
+
+/* Classes de fond */
+.bg-1 { background: var(--color-bg-1); } /* Fond avec la couleur de fond 1 */
+.bg-2 { background: var(--color-bg-2); } /* Fond avec la couleur de fond 2 */
+.bg-3 { background: var(--color-bg-3); } /* Fond avec la couleur de fond 3 */
+.bg-4 { background: var(--color-bg-4); } /* Fond avec la couleur de fond 4 */
+.bg-5 { background: var(--color-bg-5); } /* Fond avec la couleur de fond 5 */
+
+/* Media query pour les écrans larges */
+@media screen and (min-width: 63em) {
+	body {
+		--page-padding: 2rem 3rem; /* Marge intérieure de la page sur les grands écrans */
+	}
+	.frame--header {
+		height: 100vh; /* Hauteur de 100% de la hauteur de la vue */
+		grid-template-columns: auto auto auto 1fr 1fr; /* Colonnes de la grille */
+		grid-template-rows: auto 1fr auto; /* Lignes de la grille */
+		align-content: space-between; /* Alignement des contenus */
+		grid-template-areas: 'title back prev sub sponsor' 'heading heading heading heading heading' 'demos demos demos demos demos'; /* Zones de la grille */
+	}
+	.frame__heading {
+		margin-top: 0; /* Marge supérieure */
+	}
+	.frame__heading h2 {
+		white-space: nowrap; /* Espace blanc non cassable */
+	}
+	.frame__heading p {
+		margin: 0 0 0 auto; /* Marges du paragraphe */
+	}
+	.content--grid .content__title {
+		align-self: end; /* Alignement du titre du contenu */
+	}
+	.frame__demos {
+		position: fixed; /* Position fixée */
+		bottom: 2rem; /* Bas de 2rem */
+	}
+	.frame--footer {
+		padding-bottom: 0; /* Rembourrage inférieur de 0 */
+		grid-template-areas: 'credits ...' '... author'; /* Zones de la grille */
+		grid-template-columns: 1fr 1fr; /* Colonnes de la grille */
+		grid-template-rows: auto 6rem; /* Lignes de la grille */
+	}
+	.frame__author {
+		align-self: center; /* Alignement de l'auteur */
+	}
+	.frame #cdawrap {
+		max-width: 300px; /* Largeur maximale de cdawrap */
+		text-align: right; /* Alignement du texte à droite */
+	}
+	.frame #cdawrap, 
+	.frame__author,
+	.frame__sub {
+		justify-self: end; /* Justification à droite */
+	}
+	.content--grid,
+	.content--grid .content__inner {
+		grid-template-areas: 'content-img content-title' 'content-img content-text'; /* Zones de la grille */
+		grid-template-columns: 30% 1fr; /* Colonnes de la grille */
+		justify-items: start; /* Justification à gauche */
+	}
+	.content__img--large {
+		width: 160%; /* Largeur de 160% */
+	}
+	.content__img--left {
+		justify-self: end; /* Justification à droite */
+	}
+	.content__text--left {
+		text-align: left; /* Alignement du texte à gauche */
+		align-self: start; /* Alignement en haut */
+	}
+	.content--card {
+		width: 50vw; /* Largeur de 50% de la largeur de la vue */
+	}
+	.content--half {
+		width: 50%; /* Largeur de 50% */
+	}
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    cursor: pointer;
+    width: 50px;
+    font-size: 30px;
+    color: #ccc;
+    text-align: center;
+  }
+  
+  .rating label:before {
+    content: '★';
+  }
+  
+  .rating input:checked ~ label {
+    color: #f7d32e;
+  }
