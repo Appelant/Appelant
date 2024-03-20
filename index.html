@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Appelant Café</title>
+		<meta name="description" content="Some examples for how sticky sections can be animated." />
+		<meta name="keywords" content="sticky, css, gsap, animation, sticky section, layout" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="image.ico">
+		<link rel="stylesheet" href="https://use.typekit.net/lsf5xpv.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script>document.documentElement.className="js";</script>
+		
+	</head>
+	<body class="loading demo-1">
+		<main>
+			<header class="frame frame--header" style="background-image:url(img/1.png);">
+				<h1 class="frame__title">/ / / / / / / / / / / / / / / / / / /</h1> 
+				<div class="frame__heading">
+					<h2 class="content__title"><i>Appelant</i> Café</h2>
+					<p class="text-meta">Dégustez des saveurs riches et profondes, cultivées avec passion et raffinement.
+					</p>
+				</div>
+			</header>
+			<div class="content content--highlight content--intro">
+				<p class="text-large">Découvrez l'harmonie des saveurs et le réconfort d'une pause bien méritée à l'Appelant Café, où chaque tasse raconte une histoire et chaque gorgée éveille vos sens.</p> 
+			</div>
+			
+			<div class="wrap">
+				<div class="content content--sticky content--grid bg-1">
+					<h1>Notre Café</h1>
+
+
+
+    <div id="colmn_left1">
+        <img class="content__img content__img--large content__img--left" src="img/café 1.png" >
+        <h2>Qualité Exceptionnelle</h2>
+        <p>Nos grains de café arabica sont soigneusement sélectionnés pour leur goût exquis et leur arôme intense.</p>
+    </div>
+
+    <div id="colmn_middle2">
+        <img class="content__img content__img--large content__img--left" src="img/café 2.png" >
+        <h2>Expérience Unique</h2>
+        <p>Nos baristas talentueux créent des œuvres d'art comestibles pour chaque tasse de café.</p>
+    </div>
+
+    <div id="colmn_right3">
+        <img class="content__img content__img--large content__img--left" src="img/café 3.png" >
+		
+		<br>
+        <h2>Raffinement Absolu</h2>
+        <p>Nos grains de café arabica sont soigneusement sélectionnés pour leur goût exquis et leur arôme intense.</p>
+    </div>
+				</div>
+				
+				<div class="content content--sticky content--grid bg-2">
+					<img class="content__img content__img--large content__img--left" src="img/2.png" />
+					<h2 class="content__title"><i>a Propos</i> De nous</h2>
+					<p class="content__text content__text--left text-meta">					
+						<strong>À Propos de Nous</strong>
+						<br><br>
+					<strong>Notre Mission</strong>
+						<br><br>
+						Nous nous engageons à offrir une expérience café exceptionnelle, alliant tradition et innovation.
+						<br><br>
+					<strong>Notre Engagement</strong>
+						<br><br>
+						Nous soutenons les producteurs de café locaux pour des pratiques durables et équitables.
+						
+				</div>
+				<div class="content content--sticky content--grid bg-3">
+					<img class="content__img content__img--large content__img--left" src="img/1.png" />
+					<h2 class="content__title"><i>Contactez-</i> nous</h2>
+					<p class="content__text content__text--left text-meta">
+						
+						<strong>Heur d'ouverture</strong>
+						<br><br>
+						Lun - Sam: 8h - 18h
+
+						<br><br>
+						<strong>Adresse</strong>
+						<br><br>
+						123 Rue Du Café, Lyon, France
+						<br><br>
+
+						
+						<strong>Téléphone</strong>
+						<br><br>
+						+33 1 23 45 67 89
+					</p>
+				</div>
+				<div class="content content--sticky content--grid bg-4">
+					<img class="content__img content__img--large content__img--left" src="img/price.png" />
+					<h2 class="content__title"><i>Les</i> Prix</h2>
+					<p class="content__text content__text--left text-meta">
+					<p>Expresso <span style="margin-left: 20px;">500$</span></p>
+					<p>Americano <span style="margin-left: 14px;">500$</span></p>
+					<p>Cappuccino <span style="margin-left: 7px;">500$</span></p>
+					<p>Mocha <span style="margin-left: 30px;">500$</span></p>
+					<p>Cafe Latte <span style="margin-left: 9px;">500$</span></p>
+					<p>Caramel Macchiato <span style="margin-left: 0px;">500$</span></p>
+
+				</div>
+				<div class="content content--sticky content--grid bg-5">
+                   
+                </div>
+				
+			</div>
+			<div class="content content--highlight content--outro">
+				<p class="text-large">Laisser un avis sur mon site</p> 
+				<div class="rating">
+					<input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+					<input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+					<input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+					<input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+					<input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+					<script src="./js/star.js"></script>
+				  </div>
+				<img class="content__img spacer" src="img/1.png" />
+			</div>
+			
+		</main>
+		<script src="js/gsap.min.js"></script>
+		<script src="js/ScrollTrigger.min.js"></script>
+		<script src="js/lenis.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script type="module" src="js/demo1/index.js"></script>
+	</body>
+</html>
