@@ -10,7 +10,7 @@
     font-size: 16px; /* Taille de police */
     --page-padding: 1.5rem; /* Marge intérieure de la page */
     --color-text: #fff; /* Couleur du texte */
-    --color-bg: #12100e; /* Couleur de fond */
+    --color-bg: #251c12; /* Couleur de fond */
     --color-link: rgba(255,255,255,0.6); /* Couleur du lien */
     --color-link-hover: #fff; /* Couleur du lien au survol */
     --color-bg-1: #2f251e; /* Couleur de fond 1 */
@@ -18,6 +18,7 @@
     --color-bg-3: var(--color-bg-1); /* Couleur de fond 3 */
     --color-bg-4: var(--color-bg-2); /* Couleur de fond 4 */
     --color-bg-5: var(--color-bg-1); /* Couleur de fond 5 */
+    --color-bg-6: var(--color-bg-2); /* Couleur de fond 6 */
 }
 
 /* Styles de base pour le corps de la page */
@@ -138,7 +139,7 @@ a:focus-visible {
     background-size: auto 80%; /* Taille de fond automatique à 80% */
     background-position: 120% 50%; /* Position de fond */
     background-repeat: no-repeat; /* Répétition de fond */
-    grid-template-areas: 'title' 'prev' 'back' 'sub' 'sponsor' 'demos' 'heading'; /* Zones de la grille */
+    grid-template-areas: 'title' 'prev' 'back' 'sub' 'sponsor' '' 'heading'; /* Zones de la grille */
 }
 
 /* Styles du pied de cadre */
@@ -181,44 +182,6 @@ a:focus-visible {
     grid-area: sub; /* Zone de la grille */
 }
 
-/* Styles des démos du cadre */
-.frame__demos {
-    grid-area: demos; /* Zone de la grille */
-    display: flex; /* Affichage en ligne */
-    align-items: center; /* Alignement des éléments au centre */
-    gap: 0.5rem; /* Espacement entre les éléments */
-    align-self: start; /* Alignement de l'auto-alignement au début */
-    flex-wrap: wrap; /* Enveloppement des éléments sur plusieurs lignes */
-    background: var(--color-bg); /* Couleur de fond */
-    border: 1px solid; /* Bordure de 1px solide */
-    padding: 1rem; /* Rembourrage */
-    border-radius: 10px; /* Bordure arrondie */
-}
-
-/* Styles des éléments enfants de .frame__demos */
-.frame__demos > * {
-    width: 2rem; /* Largeur de 2rem */
-    display: block; /* Affichage en bloc */
-    flex: none; /* Flex non */
-    text-decoration: none; /* Pas de décoration de texte */
-    border-radius: 50%; /* Bordure arrondie à 50% */
-    aspect-ratio: 1; /* Ratio d'aspect de 1 */
-    border: 1px solid var(--color-link-hover); /* Bordure de 1px solide avec la couleur var(--color-link-hover) */
-    display: grid; /* Affichage en grille */
-    place-items: center; /* Position des éléments au centre */
-    padding-top: 0.2em; /* Rembourrage supérieur de 0.2em */
-    background: var(--color-bg); /* Couleur de fond */
-}
-
-/* Styles du span enfant de .frame__demos */
-.frame__demos > span {
-    filter: invert(100%); /* Inversion des couleurs */
-}
-
-/* Styles du contenu avant .frame__demos */
-.frame__demos::before {
-    content: "Variations:"; /* Contenu de l'élément ::before */
-}
 
 /* Styles de l'en-tête du cadre */
 .frame__heading {
@@ -436,7 +399,7 @@ i {
 		grid-template-columns: auto auto auto 1fr 1fr; /* Colonnes de la grille */
 		grid-template-rows: auto 1fr auto; /* Lignes de la grille */
 		align-content: space-between; /* Alignement des contenus */
-		grid-template-areas: 'title back prev sub sponsor' 'heading heading heading heading heading' 'demos demos demos demos demos'; /* Zones de la grille */
+		grid-template-areas: 'title back prev sub sponsor' 'heading heading heading heading heading'; /* Zones de la grille */
 	}
 	.frame__heading {
 		margin-top: 0; /* Marge supérieure */
@@ -450,10 +413,7 @@ i {
 	.content--grid .content__title {
 		align-self: end; /* Alignement du titre du contenu */
 	}
-	.frame__demos {
-		position: fixed; /* Position fixée */
-		bottom: 2rem; /* Bas de 2rem */
-	}
+	
 	.frame--footer {
 		padding-bottom: 0; /* Rembourrage inférieur de 0 */
 		grid-template-areas: 'credits ...' '... author'; /* Zones de la grille */
