@@ -13,9 +13,16 @@
 		<script>document.documentElement.className="js";</script>
 		
 	</head>
-	<body class="loading demo-1">
-		<main>
-			<header class="frame frame--header" style="background-image:url(img/1.png);">
+        <body class="loading demo-1">
+                <nav class="navbar">
+                        <a href="#home">Accueil</a>
+                        <a href="#coffee">Notre Café</a>
+                        <a href="#about">À Propos</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#prices">Prix</a>
+                </nav>
+                <main>
+                        <header id="home" class="frame frame--header" style="background-image:url(img/1.png);">
 				<h1 class="frame__title">/ / / / / / / / / / / / / / / / / / /</h1> 
 				<div class="frame__heading">
 					<h2 class="content__title"><i>Appelant</i> Café</h2>
@@ -28,33 +35,28 @@
 			</div>
 			
 			<div class="wrap">
-				<div class="content content--sticky content--grid bg-1">
-					<h1>Notre Café</h1>
-
-
-
-    <div id="colmn_left1">
-        <img class="content__img content__img--large content__img--left" src="img/café 1.png" >
-        <h2>Qualité Exceptionnelle</h2>
-        <p>Nos grains de café arabica sont soigneusement sélectionnés pour leur goût exquis et leur arôme intense.</p>
-    </div>
-
-    <div id="colmn_middle2">
-        <img class="content__img content__img--large content__img--left" src="img/café 2.png" >
-        <h2>Expérience Unique</h2>
-        <p>Nos baristas talentueux créent des œuvres d'art comestibles pour chaque tasse de café.</p>
-    </div>
-
-    <div id="colmn_right3">
-        <img class="content__img content__img--large content__img--left" src="img/café 3.png" >
-		
-		<br>
-        <h2>Raffinement Absolu</h2>
-        <p>Nos grains de café arabica sont soigneusement sélectionnés pour leur goût exquis et leur arôme intense.</p>
-    </div>
-				</div>
+                                <section id="coffee" class="content content--sticky bg-1">
+                                        <h1 class="section-title">Notre Café</h1>
+                                        <div class="features">
+                                                <article class="feature">
+                                                        <img src="img/café 1.png" alt="Grains de café" />
+                                                        <h2>Qualité Exceptionnelle</h2>
+                                                        <p>Nos grains de café arabica sont soigneusement sélectionnés pour leur goût exquis et leur arôme intense.</p>
+                                                </article>
+                                                <article class="feature">
+                                                        <img src="img/café 2.png" alt="Barista préparant un café" />
+                                                        <h2>Expérience Unique</h2>
+                                                        <p>Nos baristas talentueux créent des œuvres d'art comestibles pour chaque tasse de café.</p>
+                                                </article>
+                                                <article class="feature">
+                                                        <img src="img/café 3.png" alt="Tasse de café" />
+                                                        <h2>Raffinement Absolu</h2>
+                                                        <p>Nos grains de café arabica sont soigneusement sélectionnés pour leur goût exquis et leur arôme intense.</p>
+                                                </article>
+                                        </div>
+                                </section>
 				
-				<div class="content content--sticky content--grid bg-2">
+                                <section id="about" class="content content--sticky content--grid bg-2">
 					<img class="content__img content__img--large content__img--left" src="img/2.png" />
 					<h2 class="content__title"><i>a Propos</i> De nous</h2>
 					<p class="content__text content__text--left text-meta">					
@@ -66,15 +68,15 @@
 						<br><br>
 					<strong>Notre Engagement</strong>
 						<br><br>
-						Nous soutenons les producteurs de café locaux pour des pratiques durables et équitables.
-						
-				</div>
-				<div class="content content--sticky content--grid bg-3">
+                                                Nous soutenons les producteurs de café locaux pour des pratiques durables et équitables.
+
+                                </section>
+                                <section id="contact" class="content content--sticky content--grid bg-3">
 					<img class="content__img content__img--large content__img--left" src="img/1.png" />
 					<h2 class="content__title"><i>Contactez-</i> nous</h2>
 					<p class="content__text content__text--left text-meta">
 						
-						<strong>Heur d'ouverture</strong>
+                                                <strong>Heures d'ouverture</strong>
 						<br><br>
 						Lun - Sam: 8h - 18h
 
@@ -87,29 +89,30 @@
 						
 						<strong>Téléphone</strong>
 						<br><br>
-						+33 1 23 45 67 89
-					</p>
-				</div>
-				<div class="content content--sticky content--grid bg-4">
+                                                +33 1 23 45 67 89
+                                        </p>
+                                </section>
+                                <section id="prices" class="content content--sticky content--grid bg-4">
 					<img class="content__img content__img--large content__img--left" src="img/price.png" />
-					<h2 class="content__title"><i>Les</i> Prix</h2>
-					<p class="content__text content__text--left text-meta">
-					<p>Expresso <span style="margin-left: 20px;">500$</span></p>
-					<p>Americano <span style="margin-left: 14px;">500$</span></p>
-					<p>Cappuccino <span style="margin-left: 7px;">500$</span></p>
-					<p>Mocha <span style="margin-left: 30px;">500$</span></p>
-					<p>Cafe Latte <span style="margin-left: 9px;">500$</span></p>
-					<p>Caramel Macchiato <span style="margin-left: 0px;">500$</span></p>
+                                        <h2 class="content__title"><i>Les</i> Prix</h2>
+                                        <ul class="price-list">
+                                                <li><span>Expresso</span><span>500$</span></li>
+                                                <li><span>Americano</span><span>500$</span></li>
+                                                <li><span>Cappuccino</span><span>500$</span></li>
+                                                <li><span>Mocha</span><span>500$</span></li>
+                                                <li><span>Café Latte</span><span>500$</span></li>
+                                                <li><span>Caramel Macchiato</span><span>500$</span></li>
+                                        </ul>
 
-				</div>
-				<div class="content content--sticky content--grid bg-5">
+                                </section>
+                                <section class="content content--sticky content--grid bg-5">
 
 					
 				<img class="content__img content__img--large content__img--left" src="img/cafe.png" />
 					
-				<a href="https://www.youtube.com/watch?v=Z6Dx-o3vfJY&ab_channel=7HillsProductions-MerveTekin" target="_blank"><img src="/img/licorne2.png" alt=""></a>
-					  
-				</div>
+                                <a href="https://www.youtube.com/watch?v=Z6Dx-o3vfJY&ab_channel=7HillsProductions-MerveTekin" target="_blank"><img src="/img/licorne2.png" alt=""></a>
+
+                                </section>
 				
 				
 			</div>
